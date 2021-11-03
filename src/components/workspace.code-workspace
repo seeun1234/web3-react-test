@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\..\\codeit\\images"
+		},
+		{
+			"path": "..\\..\\..\\..\\codeit\\intro"
+		},
+		{
+			"path": "..\\..\\node_modules"
+		},
+		{
+			"path": "..\\..\\public"
+		},
+		{
+			"path": ".."
+		}
+	]
+}

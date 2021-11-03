@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import {ColoredButton} from "./components/Button.js";
+import {useWeb3React} from "@web3-react/core"
+import {injectedConnector} from "./connectors";
+import CountGet from "./constant/CounterGet.js";
+import CounterInc from "./components/CounterInc.js";
 
 function App() {
+  const { chainId, account, activate, active} = useWeb3React();
+  const onClick = () => {
+    activate(injectedConnector)
+
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>Chain Id : {chainId}</div>
+      <div>Account : {account}</div>
+      {active ? (
+        <div style={{color:"green"}}>
+          Connected!
+        </div>
+      ) : (
+        <button onClick={onClick}>connect</button>
+
+
+      )}
+      <CountGet />
+
+      <CounterInc/>
     </div>
   );
 }
